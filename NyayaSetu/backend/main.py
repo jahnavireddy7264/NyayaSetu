@@ -14,7 +14,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
+        
         "https://nyaya-setu-snowy.vercel.app"
     ],
     allow_credentials=True,
