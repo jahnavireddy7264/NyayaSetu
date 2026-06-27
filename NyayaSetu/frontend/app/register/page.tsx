@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 
@@ -25,16 +25,20 @@ export default function RegisterPage() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("âœ… Registration Successful!");
+        setMessage("✅ Registration Successful!");
 
         setTimeout(() => {
           window.location.href = "/";
         }, 1500);
       } else {
-        setMessage("âŒ " + (data.detail || "Registration Failed"));
+        let errorDetail = data.detail;
+        if (Array.isArray(errorDetail)) {
+          errorDetail = errorDetail.map((err: any) => err.msg).join(", ") || "Validation Error";
+        }
+        setMessage("❌ " + (typeof errorDetail === "string" ? errorDetail : "Registration Failed"));
       }
     } catch {
-      setMessage("âŒ Backend not running");
+      setMessage("❌ Backend not running");
     }
   };
 

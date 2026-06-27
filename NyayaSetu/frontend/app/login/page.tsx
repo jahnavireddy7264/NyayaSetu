@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -26,18 +26,22 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("âœ… Login Successful");
+        setMessage("✅ Login Successful");
         localStorage.setItem("userId", String(data.user_id));
         localStorage.setItem("fullName", data.full_name);
         localStorage.setItem("email", email);
 
         router.push("/dashboard");
       } else {
-        setMessage(data.detail || "âŒ Login Failed");
+        let errorDetail = data.detail;
+        if (Array.isArray(errorDetail)) {
+          errorDetail = errorDetail.map((err: any) => err.msg).join(", ") || "Validation Error";
+        }
+        setMessage(typeof errorDetail === "string" ? errorDetail : "❌ Login Failed");
       }
     } catch (error) {
       console.error(error);
-      setMessage("âŒ Backend not running");
+      setMessage("❌ Backend not running");
     }
   };
 
