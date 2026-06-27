@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
@@ -9,7 +9,7 @@ export default function CaseSearchPage() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/cases")
+    fetch("https://nyayasetu-8lon.onrender.com/cases")
       .then((res) => res.json())
       .then((data) => setCases(data));
   }, []);
@@ -28,7 +28,7 @@ export default function CaseSearchPage() {
         {/* Heading */}
 
         <h1 className="text-4xl font-bold text-white mb-2">
-          ⚖ Case Reference Engine
+          âš– Case Reference Engine
         </h1>
 
         <p className="text-slate-400 mb-8">

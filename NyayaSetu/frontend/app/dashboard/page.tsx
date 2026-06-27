@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
@@ -18,7 +18,7 @@ export default function DashboardPage() {
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/dashboard")
+    fetch("https://nyayasetu-8lon.onrender.com/dashboard")
       .then((res) => res.json())
       .then((result) => setData(result));
   }, []);
@@ -143,7 +143,7 @@ export default function DashboardPage() {
         <div className="bg-white rounded-3xl shadow-lg p-6">
 
           <h2 className="text-2xl font-bold mb-5">
-            📋 Recent Activity
+            ðŸ“‹ Recent Activity
           </h2>
 
           <div className="space-y-4">
@@ -177,18 +177,18 @@ export default function DashboardPage() {
         <div className="bg-white rounded-3xl shadow-lg p-6">
 
           <h2 className="text-2xl font-bold mb-5">
-            🤖 AI Insights
+            ðŸ¤– AI Insights
           </h2>
 
           <ul className="space-y-4 text-gray-700">
 
-            <li>✅ Upload legal documents for AI analysis.</li>
+            <li>âœ… Upload legal documents for AI analysis.</li>
 
-            <li>✅ Search similar court judgments.</li>
+            <li>âœ… Search similar court judgments.</li>
 
-            <li>✅ Stay updated with legal news.</li>
+            <li>âœ… Stay updated with legal news.</li>
 
-            <li>✅ Learn your legal rights.</li>
+            <li>âœ… Learn your legal rights.</li>
 
           </ul>
 
@@ -199,7 +199,7 @@ export default function DashboardPage() {
         <div className="bg-white rounded-3xl shadow-lg p-6">
 
           <h2 className="text-2xl font-bold mb-5">
-            ⚙️ System Status
+            âš™ï¸ System Status
           </h2>
 
           <div className="space-y-4">
@@ -207,28 +207,28 @@ export default function DashboardPage() {
             <div className="flex justify-between">
               <span>Backend</span>
               <span className="text-green-600 font-semibold">
-                ● Online
+                â— Online
               </span>
             </div>
 
             <div className="flex justify-between">
               <span>Database</span>
               <span className="text-green-600 font-semibold">
-                ● Connected
+                â— Connected
               </span>
             </div>
 
             <div className="flex justify-between">
               <span>AI Assistant</span>
               <span className="text-green-600 font-semibold">
-                ● Active
+                â— Active
               </span>
             </div>
 
             <div className="flex justify-between">
               <span>Upload Service</span>
               <span className="text-green-600 font-semibold">
-                ● Running
+                â— Running
               </span>
             </div>
 

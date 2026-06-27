@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
@@ -15,7 +15,7 @@ export default function LegalNewsPage() {
   const [news, setNews] = useState<News[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/news/")
+    fetch("https://nyayasetu-8lon.onrender.com/news/")
       .then((res) => res.json())
       .then((data) => setNews(data));
   }, []);

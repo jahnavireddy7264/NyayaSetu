@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ export default function RegisterPage() {
 
   const register = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/auth/register", {
+      const response = await fetch("https://nyayasetu-8lon.onrender.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -25,16 +25,16 @@ export default function RegisterPage() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("✅ Registration Successful!");
+        setMessage("âœ… Registration Successful!");
 
         setTimeout(() => {
           window.location.href = "/";
         }, 1500);
       } else {
-        setMessage("❌ " + (data.detail || "Registration Failed"));
+        setMessage("âŒ " + (data.detail || "Registration Failed"));
       }
     } catch {
-      setMessage("❌ Backend not running");
+      setMessage("âŒ Backend not running");
     }
   };
 

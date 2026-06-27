@@ -1,3 +1,3 @@
-export default function CaseTrackerPage() {
+﻿export default function CaseTrackerPage() {
   return <main>Case Tracker</main>;
 }

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
@@ -13,7 +13,7 @@ export default function RightsPage() {
   const [rights, setRights] = useState<Right[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/rights/")
+    fetch("https://nyayasetu-8lon.onrender.com/rights/")
       .then((res) => res.json())
       .then((data) => setRights(data));
   }, []);

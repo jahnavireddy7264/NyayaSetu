@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
@@ -15,7 +15,7 @@ export default function AssistantPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/chat/", {
+      const res = await fetch("https://nyayasetu-8lon.onrender.com/chat/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ export default function AssistantPage() {
       const data = await res.json();
       setResponse(data.response);
     } catch (error) {
-      setResponse("❌ Unable to connect to AI Assistant.");
+      setResponse("âŒ Unable to connect to AI Assistant.");
     }
 
     setLoading(false);
@@ -39,7 +39,7 @@ export default function AssistantPage() {
       <div className="max-w-5xl mx-auto">
 
         <h1 className="text-4xl font-bold text-white mb-2">
-          🤖 AI Legal Assistant
+          ðŸ¤– AI Legal Assistant
         </h1>
 
         <p className="text-slate-400 mb-8">

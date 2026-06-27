@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -13,7 +13,7 @@ export default function LoginPage() {
 
   async function handleLogin() {
     try {
-      const response = await fetch("http://127.0.0.1:8000/auth/login", {
+      const response = await fetch("https://nyayasetu-8lon.onrender.com/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
